@@ -3,26 +3,26 @@
 export default function Footer() {
   return (
     <footer className="bg-white text-gray-700 border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-8 sm:py-10 md:py-12">
+      <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* About Section */}
           <div>
-            <h3 className="text-gray-900 font-bold text-base sm:text-lg mb-3 sm:mb-4">School Management</h3>
-            <p className="text-xs sm:text-sm leading-relaxed text-gray-600">
+            <h3 className="text-gray-900 font-bold text-lg mb-4">School Management</h3>
+            <p className="text-sm leading-relaxed text-gray-600">
               Comprehensive school management system designed to streamline educational operations and enhance student learning outcomes.
             </p>
-            <div className="flex gap-3 sm:gap-4 mt-3 sm:mt-4">
-              <a href="#" className="text-gray-500 hover:text-blue-500 transition text-lg sm:text-xl">f</a>
-              <a href="#" className="text-gray-500 hover:text-blue-500 transition text-lg sm:text-xl">𝕏</a>
-              <a href="#" className="text-gray-500 hover:text-blue-500 transition text-lg sm:text-xl">in</a>
+            <div className="flex gap-4 mt-4">
+              <a href="#" className="text-gray-500 hover:text-blue-500 transition text-xl">f</a>
+              <a href="#" className="text-gray-500 hover:text-blue-500 transition text-xl">𝕏</a>
+              <a href="#" className="text-gray-500 hover:text-blue-500 transition text-xl">in</a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-gray-900 font-bold text-base sm:text-lg mb-3 sm:mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-xs sm:text-sm">
+            <h3 className="text-gray-900 font-bold text-lg mb-4">Quick Links</h3>
+            <ul className="space-y-2 text-sm">
               <li>
                 <a href="/dashboard" className="text-gray-600 hover:text-blue-500 transition">
                   Dashboard
@@ -48,8 +48,8 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="text-gray-900 font-bold text-base sm:text-lg mb-3 sm:mb-4">Resources</h3>
-            <ul className="space-y-2 text-xs sm:text-sm">
+            <h3 className="text-gray-900 font-bold text-lg mb-4">Resources</h3>
+            <ul className="space-y-2 text-sm">
               <li>
                 <a href="#" className="text-gray-600 hover:text-blue-500 transition">
                   Documentation
@@ -75,11 +75,11 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-gray-900 font-bold text-base sm:text-lg mb-3 sm:mb-4">Contact Info</h3>
-            <ul className="space-y-2 text-xs sm:text-sm">
+            <h3 className="text-gray-900 font-bold text-lg mb-4">Contact Info</h3>
+            <ul className="space-y-2 text-sm">
               <li className="flex gap-2">
                 <span>📧</span>
-                <a href="mailto:info@school.com" className="text-gray-600 hover:text-blue-500 transition break-all">
+                <a href="mailto:info@school.com" className="text-gray-600 hover:text-blue-500 transition">
                   info@school.com
                 </a>
               </li>
@@ -98,14 +98,14 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-200 my-6 sm:my-8"></div>
+        <div className="border-t border-gray-200 my-8"></div>
 
         {/* Bottom Footer */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className="text-xs sm:text-sm text-gray-600 text-center sm:text-left">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="text-sm text-gray-600 mb-4 md:mb-0">
             <p>&copy; 2024 School Management System. All rights reserved.</p>
           </div>
-          <div className="flex flex-wrap gap-4 sm:gap-6 text-xs sm:text-sm justify-center">
+          <div className="flex gap-6 text-sm">
             <a href="#" className="text-gray-600 hover:text-blue-500 transition">
               Privacy Policy
             </a>

@@ -22,25 +22,25 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900">
       {/* Navigation */}
-      <nav className="py-6 px-6 border-b border-blue-700">
+      <nav className="py-4 sm:py-6 px-3 sm:px-4 md:px-6 border-b border-blue-700">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2 text-white hover:text-blue-200 transition">
-            <span className="text-3xl">🎓</span>
-            <span className="text-2xl font-bold">School Management</span>
+          <Link href="/" className="flex items-center gap-1 sm:gap-2 text-white hover:text-blue-200 transition">
+            <span className="text-2xl sm:text-3xl">🎓</span>
+            <span className="text-lg sm:text-xl md:text-2xl font-bold">School Management</span>
           </Link>
-          <div className="flex gap-4">
+          <div className="flex gap-2 sm:gap-4">
             {user ? (
               <>
-                <Link href="/dashboard" className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium">
+                <Link href="/dashboard" className="px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium text-sm sm:text-base">
                   Dashboard
                 </Link>
               </>
             ) : (
               <>
-                <Link href="/login" className="px-6 py-2 text-white border border-white rounded-lg hover:bg-white hover:text-blue-900 transition font-medium">
+                <Link href="/login" className="px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 text-white border border-white rounded-lg hover:bg-white hover:text-blue-900 transition font-medium text-sm sm:text-base">
                   Login
                 </Link>
-                <Link href="/signup" className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium">
+                <Link href="/signup" className="px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium text-sm sm:text-base">
                   Sign Up
                 </Link>
               </>
@@ -50,19 +50,19 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-6 py-20">
-        <div className="text-center text-white mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10 sm:py-16 md:py-20">
+        <div className="text-center text-white mb-10 sm:mb-16">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 px-2">
             School Management <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">System</span>
           </h1>
-          <p className="text-xl md:text-2xl text-blue-100 mb-8">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 mb-6 sm:mb-8 px-4">
             Comprehensive solution for managing students, teachers, attendance, exams, and more
           </p>
-          <div className="flex gap-4 justify-center">
-            <Link href="/login" className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold text-lg">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+            <Link href="/login" className="px-6 sm:px-8 py-2.5 sm:py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold text-base sm:text-lg">
               Get Started
             </Link>
-            <Link href="#features" className="px-8 py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-900 transition font-semibold text-lg">
+            <Link href="#features" className="px-6 sm:px-8 py-2.5 sm:py-3 border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-900 transition font-semibold text-base sm:text-lg">
               Learn More
             </Link>
           </div>
