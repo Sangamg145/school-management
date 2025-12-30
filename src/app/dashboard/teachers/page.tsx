@@ -43,7 +43,7 @@ export default function TeachersPage() {
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-        <div className="bg-linear-to-br from-indigo-500 to-indigo-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 text-white p-6 rounded-lg shadow-lg">
           <div className="flex justify-between items-start">
             <div>
               <p className="text-indigo-100 text-sm">Total Teachers</p>
@@ -52,7 +52,7 @@ export default function TeachersPage() {
             <span className="text-4xl">👨‍🏫</span>
           </div>
         </div>
-        <div className="bg-linear-to-br from-cyan-500 to-cyan-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-cyan-500 to-cyan-600 text-white p-6 rounded-lg shadow-lg">
           <div className="flex justify-between items-start">
             <div>
               <p className="text-cyan-100 text-sm">Present Today</p>
@@ -61,7 +61,7 @@ export default function TeachersPage() {
             <span className="text-4xl">✓</span>
           </div>
         </div>
-        <div className="bg-linear-to-br from-teal-500 to-teal-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-teal-500 to-teal-600 text-white p-6 rounded-lg shadow-lg">
           <div className="flex justify-between items-start">
             <div>
               <p className="text-teal-100 text-sm">Subjects</p>
@@ -70,7 +70,7 @@ export default function TeachersPage() {
             <span className="text-4xl">📚</span>
           </div>
         </div>
-        <div className="bg-linear-to-br from-pink-500 to-pink-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-pink-500 to-pink-600 text-white p-6 rounded-lg shadow-lg">
           <div className="flex justify-between items-start">
             <div>
               <p className="text-pink-100 text-sm">Avg. Experience</p>

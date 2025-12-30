@@ -85,21 +85,21 @@ export default function StudentFees() {
 
       {/* Fee Summary */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-linear-to-br from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-blue-100 text-sm">Total Fees</p>
           <p className="text-3xl font-bold mt-2">₹{totalFees}</p>
         </div>
-        <div className="bg-linear-to-br from-green-500 to-green-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-green-500 to-green-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-green-100 text-sm">Fees Paid</p>
           <p className="text-3xl font-bold mt-2">₹{paidFees}</p>
           <p className="text-green-100 text-xs mt-2">{((paidFees / totalFees) * 100).toFixed(1)}%</p>
         </div>
-        <div className="bg-linear-to-br from-yellow-500 to-yellow-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-yellow-500 to-yellow-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-yellow-100 text-sm">Pending</p>
           <p className="text-3xl font-bold mt-2">₹{pendingFees}</p>
           <p className="text-yellow-100 text-xs mt-2">{feeRecords.filter((f) => f.status === "Pending").length} months</p>
         </div>
-        <div className="bg-linear-to-br from-red-500 to-red-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-red-500 to-red-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-red-100 text-sm">Overdue</p>
           <p className="text-3xl font-bold mt-2">₹{overdueFees}</p>
           <p className="text-red-100 text-xs mt-2">{feeRecords.filter((f) => f.status === "Overdue").length} months</p>
@@ -119,7 +119,7 @@ export default function StudentFees() {
             </div>
             <div className="w-full h-4 bg-gray-300 rounded-full overflow-hidden">
               <div
-                className="h-full bg-linear-to-r from-blue-500 to-green-500"
+                className="h-full bg-gradient-to-r from-blue-500 to-green-500"
                 style={{ width: `${(paidFees / totalFees) * 100}%` }}
               ></div>
             </div>

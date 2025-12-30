@@ -19,7 +19,7 @@ export default function DataTable({ columns, data, actions }: DataTableProps) {
     <div className="overflow-x-auto rounded-lg shadow">
       <table className="w-full">
         <thead>
-          <tr className="bg-linear-to-r from-blue-600 to-blue-700 text-white">
+          <tr className="bg-gradient-to-r from-blue-600 to-blue-700 text-white">
             {columns.map((col) => (
               <th key={col.key} className={`px-6 py-3 text-left text-sm font-semibold ${col.width || ""}`}>
                 {col.label}

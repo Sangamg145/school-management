@@ -39,7 +39,7 @@ export default function TeacherDashboard() {
 
       {/* Quick Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-linear-to-br from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-lg">
           <div className="flex justify-between items-start">
             <div>
               <p className="text-blue-100 text-sm">My Classes</p>
@@ -48,7 +48,7 @@ export default function TeacherDashboard() {
             <span className="text-4xl">🏫</span>
           </div>
         </div>
-        <div className="bg-linear-to-br from-green-500 to-green-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-green-500 to-green-600 text-white p-6 rounded-lg shadow-lg">
           <div className="flex justify-between items-start">
             <div>
               <p className="text-green-100 text-sm">Total Students</p>
@@ -57,7 +57,7 @@ export default function TeacherDashboard() {
             <span className="text-4xl">👨‍🎓</span>
           </div>
         </div>
-        <div className="bg-linear-to-br from-purple-500 to-purple-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-purple-500 to-purple-600 text-white p-6 rounded-lg shadow-lg">
           <div className="flex justify-between items-start">
             <div>
               <p className="text-purple-100 text-sm">Average Performance</p>
@@ -66,7 +66,7 @@ export default function TeacherDashboard() {
             <span className="text-4xl">📊</span>
           </div>
         </div>
-        <div className="bg-linear-to-br from-orange-500 to-orange-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-6 rounded-lg shadow-lg">
           <div className="flex justify-between items-start">
             <div>
               <p className="text-orange-100 text-sm">Pending Papers</p>

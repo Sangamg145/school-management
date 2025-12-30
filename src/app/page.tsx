@@ -20,7 +20,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-blue-900 via-blue-800 to-purple-900">
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-purple-900">
       {/* Navigation */}
       <nav className="py-6 px-6 border-b border-blue-700">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -53,7 +53,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-6 py-20">
         <div className="text-center text-white mb-16">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            School Management <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400">System</span>
+            School Management <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">System</span>
           </h1>
           <p className="text-xl md:text-2xl text-blue-100 mb-8">
             Comprehensive solution for managing students, teachers, attendance, exams, and more
@@ -69,7 +69,7 @@ export default function Home() {
         </div>
 
         {/* Features Section */}
-        <div id="features" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-20">
+        {/* <div id="features" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 my-20">
           {[
             { icon: "👨‍🎓", title: "Student Management", desc: "Manage student information, admissions, and records" },
             { icon: "👨‍🏫", title: "Teacher Portal", desc: "Manage faculty, qualifications, and schedules" },
@@ -84,10 +84,10 @@ export default function Home() {
               <p className="text-blue-100">{feature.desc}</p>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Roles Section */}
-        <div className="my-20">
+        {/* <div className="my-20">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">User Roles</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -96,7 +96,7 @@ export default function Home() {
               { icon: "👨‍🏫", role: "Teacher", color: "from-green-500 to-green-600", features: ["Class Records", "Attendance", "Student Info"] },
               { icon: "👨‍🎓", role: "Student", color: "from-purple-500 to-purple-600", features: ["View Grades", "Attendance", "Profile"] },
             ].map((role, idx) => (
-              <div key={idx} className={`bg-linear-to-br ${role.color} rounded-lg p-8 text-white shadow-lg hover:shadow-xl transition`}>
+              <div key={idx} className={`bg-gradient-to-br ${role.color} rounded-lg p-8 text-white shadow-lg hover:shadow-xl transition`}>
                 <div className="text-5xl mb-4">{role.icon}</div>
                 <h3 className="text-2xl font-bold mb-4">{role.role}</h3>
                 <ul className="space-y-2">
@@ -110,7 +110,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* CTA Section */}
         <div className="text-center py-20 border-t border-blue-700">

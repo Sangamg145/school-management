@@ -89,19 +89,19 @@ export default function StudentAttendance() {
 
       {/* Overall Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-linear-to-br from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-blue-100 text-sm">Total Days</p>
           <p className="text-3xl font-bold mt-2">{totalDays}</p>
         </div>
-        <div className="bg-linear-to-br from-green-500 to-green-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-green-500 to-green-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-green-100 text-sm">Present</p>
           <p className="text-3xl font-bold mt-2">{presentDays}</p>
         </div>
-        <div className="bg-linear-to-br from-red-500 to-red-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-red-500 to-red-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-red-100 text-sm">Absent</p>
           <p className="text-3xl font-bold mt-2">{absentDays}</p>
         </div>
-        <div className="bg-linear-to-br from-orange-500 to-orange-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-orange-100 text-sm">Leave</p>
           <p className="text-3xl font-bold mt-2">{leaveDays}</p>
         </div>

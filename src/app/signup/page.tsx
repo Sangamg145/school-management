@@ -72,7 +72,7 @@ export default function SignupPage() {
   }
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-green-900 via-blue-900 to-purple-900 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-green-900 via-blue-900 to-purple-900 flex flex-col">
       {/* Header */}
       <div className="py-6 px-6 border-b border-blue-700">
         <Link href="/" className="flex items-center gap-2 text-white hover:text-blue-200 transition">
@@ -129,7 +129,7 @@ export default function SignupPage() {
               )}
 
               {/* Role Selection */}
-              <div className="mb-8">
+              {/* <div className="mb-8">
                 <label className="block text-sm font-semibold text-gray-700 mb-4">Select Your Role</label>
                 <div className="grid grid-cols-2 gap-3">
                   {roleOptions.map((role) => (
@@ -138,7 +138,7 @@ export default function SignupPage() {
                       onClick={() => setSelectedRole(role.id as UserRole)}
                       className={`p-4 rounded-lg border-2 transition text-center ${
                         selectedRole === role.id
-                          ? `bg-linear-to-br ${role.color} text-white border-transparent shadow-lg`
+                          ? `bg-gradient-to-br ${role.color} text-white border-transparent shadow-lg`
                           : "border-gray-200 text-gray-700 hover:border-gray-300"
                       }`}
                     >
@@ -147,7 +147,7 @@ export default function SignupPage() {
                     </button>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               {/* Form */}
               <form onSubmit={handleSignup} className="space-y-4">
@@ -201,7 +201,7 @@ export default function SignupPage() {
 
                 <button
                   type="submit"
-                  className="w-full py-2 bg-linear-to-r from-green-600 to-green-700 text-white rounded-lg font-semibold hover:from-green-700 hover:to-green-800 transition"
+                  className="w-full py-2 bg-gradient-to-r from-green-600 to-green-700 text-white rounded-lg font-semibold hover:from-green-700 hover:to-green-800 transition"
                 >
                   Create Account
                 </button>

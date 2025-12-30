@@ -73,7 +73,7 @@ export default function TeacherProfile() {
       </div>
 
       {/* Profile Header Card */}
-      <div className="bg-linear-to-r from-blue-500 to-blue-600 text-white rounded-lg shadow-lg p-8 mb-8">
+      <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg shadow-lg p-8 mb-8">
         <div className="flex items-center gap-6">
           <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center text-4xl">
             👨‍🏫
@@ -253,7 +253,7 @@ export default function TeacherProfile() {
           </div>
 
           {/* Performance Stats */}
-          <div className="bg-linear-to-br from-blue-500 to-blue-600 text-white rounded-lg shadow-lg p-6">
+          <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-lg shadow-lg p-6">
             <h3 className="font-bold mb-4">Performance Overview</h3>
             <div className="space-y-3">
               <div>

@@ -3,6 +3,7 @@ import { UserRole } from "@/context/AuthContext";
 export const roleBasedMenuItems = {
   super_admin: [
     { label: "Dashboard", href: "/dashboard", icon: "📊" },
+    { label: "Admission", href: "/dashboard/admission", icon: "📋" },
     { label: "Students", href: "/dashboard/students", icon: "👨‍🎓" },
     { label: "Teachers", href: "/dashboard/teachers", icon: "👨‍🏫" },
     { label: "Classes", href: "/dashboard/classes", icon: "🏫" },
@@ -10,18 +11,19 @@ export const roleBasedMenuItems = {
     { label: "Exams", href: "/dashboard/exams", icon: "📝" },
     { label: "Fees", href: "/dashboard/fees", icon: "💰" },
     { label: "Reports", href: "/dashboard/reports", icon: "📈" },
-    { label: "Settings", href: "/dashboard/settings", icon: "⚙️" },
+    // { label: "Settings", href: "/dashboard/settings", icon: "⚙️" },
   ],
   admin: [
     { label: "Dashboard", href: "/dashboard", icon: "📊" },
+    { label: "Admission", href: "/dashboard/admission", icon: "📋" },
     { label: "Students", href: "/dashboard/students", icon: "👨‍🎓" },
     { label: "Teachers", href: "/dashboard/teachers", icon: "👨‍🏫" },
-    { label: "Classes", href: "/dashboard/classes", icon: "🏫" },
-    { label: "Attendance", href: "/dashboard/attendance", icon: "✓" },
-    { label: "Exams", href: "/dashboard/exams", icon: "📝" },
+    // { label: "Classes", href: "/dashboard/classes", icon: "🏫" },
+    // { label: "Attendance", href: "/dashboard/attendance", icon: "✓" },
+    // { label: "Exams", href: "/dashboard/exams", icon: "📝" },
     { label: "Fees", href: "/dashboard/fees", icon: "💰" },
-    { label: "Reports", href: "/dashboard/reports", icon: "📈" },
-    { label: "Settings", href: "/dashboard/settings", icon: "⚙️" },
+    // { label: "Reports", href: "/dashboard/reports", icon: "📈" },
+    // { label: "Settings", href: "/dashboard/settings", icon: "⚙️" },
   ],
   teacher: [
     { label: "Dashboard", href: "/dashboard", icon: "📊" },

@@ -3,6 +3,7 @@
 import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { BarChart, LineChart, PieChart } from "@/components/charts";
 
 export default function TeacherPerformance() {
   const { user, isHydrated } = useAuth();
@@ -27,6 +28,25 @@ export default function TeacherPerformance() {
   if (!isHydrated || !user || user.role !== "teacher") {
     return null;
   }
+
+  // Chart data
+  const classPerformanceChart = {
+    labels: ["Class 10-A", "Class 10-B", "Class 9-A", "Class 8-B"],
+    datasets: [{ label: "Average Marks %", data: [84, 81, 79, 83] }],
+  };
+
+  const performanceTrend = {
+    labels: ["Term 1", "Term 2", "Term 3", "Term 4"],
+    datasets: [
+      { label: "Class 10-A", data: [78, 82, 84, 86] },
+      { label: "Class 10-B", data: [75, 79, 81, 83] },
+    ],
+  };
+
+  const gradeDistribution = {
+    labels: ["A Grade", "B Grade", "C Grade", "D Grade", "F Grade"],
+    data: [35, 52, 38, 15, 2],
+  };
 
   const classPerformance = [
     { name: "Class 10-A", avgMarks: 84, strength: 42, passed: 40, failed: 2, passPercentage: 95 },
@@ -69,25 +89,59 @@ export default function TeacherPerformance() {
 
       {/* Overall Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-linear-to-br from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-blue-100 text-sm">Overall Class Average</p>
           <p className="text-3xl font-bold mt-2">82%</p>
         </div>
-        <div className="bg-linear-to-br from-green-500 to-green-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-green-500 to-green-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-green-100 text-sm">Pass Rate</p>
           <p className="text-3xl font-bold mt-2">95%</p>
         </div>
-        <div className="bg-linear-to-br from-purple-500 to-purple-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-purple-500 to-purple-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-purple-100 text-sm">Total Students</p>
           <p className="text-3xl font-bold mt-2">142</p>
         </div>
-        <div className="bg-linear-to-br from-orange-500 to-orange-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-orange-100 text-sm">Avg Attendance</p>
           <p className="text-3xl font-bold mt-2">90%</p>
         </div>
       </div>
 
-      {/* Class Performance */}
+      {/* Charts Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        {/* Performance Trend */}
+        <div className="lg:col-span-2 bg-white rounded-lg shadow-lg p-6">
+          <h2 className="text-xl font-bold text-gray-900 mb-4">📈 Performance Trend</h2>
+          <LineChart
+            labels={performanceTrend.labels}
+            datasets={performanceTrend.datasets}
+            height={280}
+          />
+        </div>
+
+        {/* Grade Distribution */}
+        <div className="bg-white rounded-lg shadow-lg p-6">
+          <h2 className="text-xl font-bold text-gray-900 mb-4">📊 Grade Distribution</h2>
+          <PieChart
+            labels={gradeDistribution.labels}
+            data={gradeDistribution.data}
+            type="doughnut"
+            height={280}
+          />
+        </div>
+      </div>
+
+      {/* Class Performance Bar Chart */}
+      <div className="mb-8 bg-white rounded-lg shadow-lg p-6">
+        <h2 className="text-xl font-bold text-gray-900 mb-4">📉 Class-wise Average Marks</h2>
+        <BarChart
+          labels={classPerformanceChart.labels}
+          datasets={classPerformanceChart.datasets}
+          height={250}
+        />
+      </div>
+
+      {/* Class Performance Table */}
       <div className="mb-8 bg-white rounded-lg shadow-lg p-6">
         <h2 className="text-xl font-bold text-gray-900 mb-4">Class-wise Performance</h2>
         <div className="overflow-x-auto">

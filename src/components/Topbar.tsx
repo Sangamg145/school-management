@@ -73,7 +73,7 @@ export default function Topbar() {
             onClick={() => setProfileOpen(!profileOpen)}
             className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-lg transition"
           >
-            <div className="w-8 h-8 bg-linear-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold overflow-hidden">
+            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold overflow-hidden">
               {user?.name?.charAt(0)?.toUpperCase() || "A"}
             </div>
             <div className="hidden sm:block">
@@ -89,15 +89,20 @@ export default function Topbar() {
                 <p className={`text-xs font-semibold ${getRoleColor(user?.role)}`}>{getRoleLabel(user?.role)}</p>
                 <p className="text-xs text-gray-500 mt-1">{user?.email}</p>
               </div>
-              <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                👤 Profile
-              </a>
-              <a href="/dashboard/settings" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                ⚙️ Settings
-              </a>
-              <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                ❓ Help
-              </a>
+              <button
+                onClick={() => {
+                  const profilePath = user?.role === "teacher" 
+                    ? "/dashboard/teacher-profile" 
+                    : user?.role === "student"
+                    ? "/dashboard/student-profile"
+                    : "/dashboard/settings";
+                  router.push(profilePath);
+                  setProfileOpen(false);
+                }}
+                className="w-full text-left block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              >
+                Profile
+              </button>
               <div className="border-t border-gray-200 mt-2 pt-2">
                 <button
                   onClick={handleLogout}

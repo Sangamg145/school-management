@@ -3,6 +3,7 @@
 import { useAuth } from "@/context/AuthContext";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { BarChart, LineChart, PieChart } from "@/components/charts";
 
 export default function StudentPerformance() {
   const { user, isHydrated } = useAuth();
@@ -27,6 +28,22 @@ export default function StudentPerformance() {
   if (!isHydrated || !user || user.role !== "student") {
     return null;
   }
+
+  // Chart Data
+  const subjectMarksChart = {
+    labels: ["Math", "Science", "English", "Social", "Hindi", "Computer"],
+    datasets: [{ label: "Marks %", data: [92, 88, 85, 86, 87, 90] }],
+  };
+
+  const performanceTrend = {
+    labels: ["Term 1", "Term 2", "Term 3", "Term 4"],
+    datasets: [{ label: "Overall %", data: [82, 85, 86, 88] }],
+  };
+
+  const gradeDistribution = {
+    labels: ["A+ (90+)", "A (80-89)", "B (70-79)"],
+    data: [3, 2, 1],
+  };
 
   const examResults = [
     { exam: "Unit Test 1", date: "2024-01-15", subject: "Mathematics", marks: 92, total: 100, percentage: 92 },
@@ -72,26 +89,60 @@ export default function StudentPerformance() {
 
       {/* Overall Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-linear-to-br from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-blue-100 text-sm">Overall Percentage</p>
           <p className="text-3xl font-bold mt-2">88%</p>
           <p className="text-blue-100 text-xs mt-2">Grade: A</p>
         </div>
-        <div className="bg-linear-to-br from-green-500 to-green-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-green-500 to-green-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-green-100 text-sm">Total Exams</p>
           <p className="text-3xl font-bold mt-2">6</p>
           <p className="text-green-100 text-xs mt-2">Completed</p>
         </div>
-        <div className="bg-linear-to-br from-purple-500 to-purple-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-purple-500 to-purple-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-purple-100 text-sm">Best Score</p>
           <p className="text-3xl font-bold mt-2">95%</p>
           <p className="text-purple-100 text-xs mt-2">Mathematics</p>
         </div>
-        <div className="bg-linear-to-br from-orange-500 to-orange-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-orange-100 text-sm">Class Rank</p>
           <p className="text-3xl font-bold mt-2">#5</p>
           <p className="text-orange-100 text-xs mt-2">Out of 42 students</p>
         </div>
+      </div>
+
+      {/* Charts Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        {/* Performance Trend */}
+        <div className="lg:col-span-2 bg-white rounded-lg shadow-lg p-6">
+          <h2 className="text-xl font-bold text-gray-900 mb-4">📈 Performance Trend</h2>
+          <LineChart
+            labels={performanceTrend.labels}
+            datasets={performanceTrend.datasets}
+            height={280}
+          />
+        </div>
+
+        {/* Grade Distribution */}
+        <div className="bg-white rounded-lg shadow-lg p-6">
+          <h2 className="text-xl font-bold text-gray-900 mb-4">📊 Grade Distribution</h2>
+          <PieChart
+            labels={gradeDistribution.labels}
+            data={gradeDistribution.data}
+            type="doughnut"
+            height={280}
+          />
+        </div>
+      </div>
+
+      {/* Subject-wise Marks Bar Chart */}
+      <div className="mb-8 bg-white rounded-lg shadow-lg p-6">
+        <h2 className="text-xl font-bold text-gray-900 mb-4">📉 Subject-wise Marks</h2>
+        <BarChart
+          labels={subjectMarksChart.labels}
+          datasets={subjectMarksChart.datasets}
+          height={250}
+        />
       </div>
 
       {/* Subject-wise Performance */}
@@ -104,7 +155,7 @@ export default function StudentPerformance() {
                 <p className="font-semibold text-gray-900">{item.subject}</p>
                 <div className="w-full h-2 bg-gray-300 rounded-full mt-2 overflow-hidden">
                   <div
-                    className="h-full bg-linear-to-r from-blue-500 to-green-500"
+                    className="h-full bg-gradient-to-r from-blue-500 to-green-500"
                     style={{ width: `${item.current}%` }}
                   ></div>
                 </div>

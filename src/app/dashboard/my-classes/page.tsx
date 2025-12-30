@@ -155,15 +155,15 @@ export default function MyClasses() {
 
       {/* Summary Stats */}
       <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-linear-to-br from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-blue-100 text-sm">Total Students Taught</p>
           <p className="text-3xl font-bold mt-2">142</p>
         </div>
-        <div className="bg-linear-to-br from-green-500 to-green-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-green-500 to-green-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-green-100 text-sm">Overall Avg Performance</p>
           <p className="text-3xl font-bold mt-2">82%</p>
         </div>
-        <div className="bg-linear-to-br from-purple-500 to-purple-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-purple-500 to-purple-600 text-white p-6 rounded-lg shadow-lg">
           <p className="text-purple-100 text-sm">Overall Attendance</p>
           <p className="text-3xl font-bold mt-2">90%</p>
         </div>

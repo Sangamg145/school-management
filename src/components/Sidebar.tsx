@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 import { getMenuItems } from "@/utils/roleConfig";
 
@@ -11,6 +12,7 @@ interface SidebarProps {
 
 export default function Sidebar({ isOpen, onToggle }: SidebarProps) {
   const { user } = useAuth();
+  const pathname = usePathname();
   const menu = getMenuItems(user?.role);
 
   return (
@@ -31,17 +33,24 @@ export default function Sidebar({ isOpen, onToggle }: SidebarProps) {
       </div>
       
       <nav className="flex-1 px-2 py-4 space-y-2">
-        {menu.map((item) => (
-          <a
-            key={item.label}
-            href={item.href}
-            className="flex items-center gap-3 rounded px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition duration-200"
-            title={!isOpen ? item.label : ""}
-          >
-            <span className="text-lg shrink-0">{item.icon}</span>
-            {isOpen && <span className="whitespace-nowrap">{item.label}</span>}
-          </a>
-        ))}
+        {menu.map((item) => {
+          const isActive = pathname === item.href;
+          return (
+            <Link
+              key={item.label}
+              href={item.href}
+              className={`flex items-center gap-3 rounded px-3 py-2 text-sm transition duration-200 ${
+                isActive
+                  ? "bg-blue-50 text-blue-700 font-semibold"
+                  : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+              }`}
+              title={!isOpen ? item.label : ""}
+            >
+              <span className="text-lg shrink-0">{item.icon}</span>
+              {isOpen && <span className="whitespace-nowrap">{item.label}</span>}
+            </Link>
+          );
+        })}
       </nav>
     </aside>
   );

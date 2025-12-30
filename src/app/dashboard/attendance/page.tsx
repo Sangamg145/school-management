@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import DataTable from "@/components/DataTable";
+import { BarChart, LineChart, PieChart } from "@/components/charts";
 
 const attendanceData = [
   { id: "STU001", name: "John Doe", class: "10-A", date: "2024-12-20", status: "Present", time: "09:15 AM" },
@@ -9,6 +10,22 @@ const attendanceData = [
   { id: "STU003", name: "Mike Johnson", class: "9-A", date: "2024-12-20", status: "Absent", time: "-" },
   { id: "STU004", name: "Sarah Williams", class: "10-A", date: "2024-12-20", status: "Present", time: "09:10 AM" },
 ];
+
+// Chart data
+const weeklyTrendData = {
+  labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+  datasets: [{ label: "Attendance %", data: [94, 92, 95, 93, 96, 91] }],
+};
+
+const classWiseData = {
+  labels: ["Class 10-A", "Class 10-B", "Class 9-A", "Class 9-B", "Class 8-A"],
+  datasets: [{ label: "Present %", data: [95, 92, 94, 90, 93] }],
+};
+
+const attendanceDistribution = {
+  labels: ["Present", "Absent", "On Leave"],
+  data: [1175, 70, 10],
+};
 
 export default function AttendancePage() {
   const [attendance, setAttendance] = useState(attendanceData);
@@ -44,7 +61,7 @@ export default function AttendancePage() {
 
       {/* Stats */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-        <div className="bg-linear-to-br from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-lg">
           <div className="flex justify-between items-start">
             <div>
               <p className="text-blue-100 text-sm">Total Students</p>
@@ -53,7 +70,7 @@ export default function AttendancePage() {
             <span className="text-4xl">📊</span>
           </div>
         </div>
-        <div className="bg-linear-to-br from-green-500 to-green-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-green-500 to-green-600 text-white p-6 rounded-lg shadow-lg">
           <div className="flex justify-between items-start">
             <div>
               <p className="text-green-100 text-sm">Present</p>
@@ -62,7 +79,7 @@ export default function AttendancePage() {
             <span className="text-4xl">✓</span>
           </div>
         </div>
-        <div className="bg-linear-to-br from-red-500 to-red-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-red-500 to-red-600 text-white p-6 rounded-lg shadow-lg">
           <div className="flex justify-between items-start">
             <div>
               <p className="text-red-100 text-sm">Absent</p>
@@ -71,7 +88,7 @@ export default function AttendancePage() {
             <span className="text-4xl">✗</span>
           </div>
         </div>
-        <div className="bg-linear-to-br from-purple-500 to-purple-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-gradient-to-br from-purple-500 to-purple-600 text-white p-6 rounded-lg shadow-lg">
           <div className="flex justify-between items-start">
             <div>
               <p className="text-purple-100 text-sm">Attendance %</p>
@@ -80,6 +97,40 @@ export default function AttendancePage() {
             <span className="text-4xl">📈</span>
           </div>
         </div>
+      </div>
+
+      {/* Charts Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        {/* Weekly Trend */}
+        <div className="lg:col-span-2 bg-white rounded-lg shadow-lg p-6">
+          <h2 className="text-xl font-bold text-gray-900 mb-4">📈 Weekly Attendance Trend</h2>
+          <LineChart
+            labels={weeklyTrendData.labels}
+            datasets={weeklyTrendData.datasets}
+            height={280}
+          />
+        </div>
+
+        {/* Attendance Distribution */}
+        <div className="bg-white rounded-lg shadow-lg p-6">
+          <h2 className="text-xl font-bold text-gray-900 mb-4">📊 Today&apos;s Distribution</h2>
+          <PieChart
+            labels={attendanceDistribution.labels}
+            data={attendanceDistribution.data}
+            type="doughnut"
+            height={280}
+          />
+        </div>
+      </div>
+
+      {/* Class-wise Bar Chart */}
+      <div className="mb-8 bg-white rounded-lg shadow-lg p-6">
+        <h2 className="text-xl font-bold text-gray-900 mb-4">📉 Class-wise Attendance</h2>
+        <BarChart
+          labels={classWiseData.labels}
+          datasets={classWiseData.datasets}
+          height={250}
+        />
       </div>
 
       {/* Filters */}
